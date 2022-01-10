@@ -11,6 +11,13 @@ table, th, td {
   padding: 20px;
 }
 
+body{
+background-image:url(home.jpg);
+background-repeat:no-repeat;
+background-size:cover;
+}
+
+
 
 </style>
 

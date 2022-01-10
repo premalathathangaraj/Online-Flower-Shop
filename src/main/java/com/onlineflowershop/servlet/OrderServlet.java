@@ -32,8 +32,7 @@ public class OrderServlet extends HttpServlet {
 		 String name=(String) session.getAttribute("User");
 		 UserDAOImpl userDao=new UserDAOImpl();
 		 
-//		 int userId=userDao.findUserId(name);
-//		 session.setAttribute("userId", userId);
+
 		 		
 		 
 		
@@ -41,20 +40,21 @@ public class OrderServlet extends HttpServlet {
 			
 		 
 		 		 double totalPrice=(retailPrice*quantity);
+		 		 
+		 		
+		 		 
 		 
 		 	WalletDAOImpl walletDao=new WalletDAOImpl();
 		 	int userId=Integer.parseInt(session.getAttribute("userId").toString());
 		 	
-		 	int Wallet=walletDao.walletbal(userId);
-		 	System.out.println("userWallet"+Wallet);			 	
+		 	int Wallet=walletDao.walletbal(userId);		 				 	
 			 	
 		 	double wallbal =Wallet-totalPrice;
 		 	
-//		 	System.out.println("price"+retailPrice);
-//		 	System.out.println("totalPrice"+totalPrice);
-//		 	
+		 	session.setAttribute("wallbal", wallbal);
 		 	
-		 	System.out.println("walletbalance"+wallbal);
+		 	 session.setAttribute("totalPrice", totalPrice);
+		 	
 		 	
 		 	walletDao.updatewallet(wallbal,userId);
 		 	

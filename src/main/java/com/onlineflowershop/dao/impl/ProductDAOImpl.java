@@ -67,7 +67,7 @@ public class ProductDAOImpl implements ProductDAO {
 		
 	//update product
 		public  void updateProduct(String flowerName,int flowerId) {
-			String updateQuery = "update product_details set flower_name =?  where flower_id=?";
+			String updateQuery = "update inventory set flower_name =?  where flower_id=?";
             
 			try {
 			Connection con = ConnectionUtil.getDbConnection();
@@ -236,14 +236,15 @@ public class ProductDAOImpl implements ProductDAO {
 		//Category List
 	public ResultSet ShowCategory() {
 			
-			String query="select dintinct category_name from inventory";
-			
+			String query="select distinct category_name from inventory";
+			System.out.println("hello");
 			Connection con=ConnectionUtil.getDbConnection();
 			ResultSet rs=null;
 			Statement stmt;
 			try {
 				stmt=con.createStatement();
 				rs=stmt.executeQuery(query);
+				System.out.println(rs.getString(6));
 			}catch (SQLException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -252,15 +253,32 @@ public class ProductDAOImpl implements ProductDAO {
 			return rs;
 			
 		}
+
+//	
 	
-//	public ResultSet filterPrice(int min,int max) {
-		
-//		String query="select flower_name"
-		
-		
-		
-//	}
-		
+	
+	public ResultSet showCategoryList(String categoryname) {
+		String query = "select * from inventory where category_name=?";
+
+		Connection con = ConnectionUtil.getDbConnection();
+		PreparedStatement stmt;
+
+		ResultSet rs = null;
+		try {
+
+			stmt = con.prepareStatement(query);
+			stmt.setString(1, categoryname);
+			rs = stmt.executeQuery();
+			return rs;
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		return rs;
+
+	}
+
 		
 		
 		

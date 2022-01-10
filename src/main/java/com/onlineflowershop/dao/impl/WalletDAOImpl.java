@@ -52,6 +52,34 @@ public  class WalletDAOImpl implements WalletDAO {
 			
 
 	}
+	
+	public int rechargeWallet(String user) {
+		
+		Connection con = ConnectionUtil.getDbConnection();
+		String query = "update user_details set walllet =(walllet+1000) where name = ?";
+		PreparedStatement statement = null;
+		try {
+			statement = con.prepareStatement(query);
+			statement.setString(1, user);
+
+			int i = statement.executeUpdate();
+
+			if (i > 0) {
+				System.out.println("wallet Updated");
+				return 1;
+			}
+
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		return -1;
+		
+		
+		
+		
+	}
 
 	
 	}

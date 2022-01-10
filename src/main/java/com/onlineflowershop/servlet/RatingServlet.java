@@ -23,17 +23,20 @@ public class RatingServlet extends HttpServlet {
 		 int newRating=Integer.parseInt(request.getParameter("Rating"));
 		 RatingDAOImpl ratingDao=new RatingDAOImpl();
 		 int flowerId=Integer.parseInt(session.getAttribute("flower_id").toString());
-		 String flowerName=(String) session.getAttribute("FlowerName");
-//		 int flowerId=Integer.parseInt(request.getParameter("flowerId"));
+		 
+		 String flowerName=(String) session.getAttribute("flowername");
+		 
+		// String flowerName=request.getAttribute("flowerName").toString();
 		 System.out.println(flowerId);
+		 
 		 int oldRating=ratingDao.findRating(flowerName);
 		 int rating=oldRating+newRating;
 		 
 		 
-		 System.out.println(newRating);
-		 System.out.println(flowerName);
-		 System.out.println(oldRating);
-		 System.out.println(rating);
+		 System.out.println("new rating="+newRating);
+		 System.out.println("flower name="+flowerName);
+		 System.out.println("oldrating="+oldRating);
+		 System.out.println("updated rating="+rating);
 		 
 		 
 		 ratingDao.updateRating(rating, flowerId);

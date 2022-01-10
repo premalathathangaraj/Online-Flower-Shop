@@ -192,4 +192,35 @@ public class CartDAOImpl implements CartDAO {
 				return res;
 		
 			
-			}}
+			}
+			
+			public ResultSet showUserCart(int userId) {
+				String query = "select email_id,flower_name,order_quantity,total_price,order_date from cart_items inner join user_details using (user_id)inner join inventory using(flower_id) where user_id=?"; 
+						
+				
+				Connection con=ConnectionUtil.getDbConnection();
+				PreparedStatement stmt;
+				
+				ResultSet rs=null;
+				try {
+					stmt=con.prepareStatement(query);
+					System.out.println(userId);
+					stmt.setInt(1,userId) ;
+					
+					rs=stmt.executeQuery();	
+					return rs;
+				} catch (SQLException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}		
+				
+				return rs;
+				
+			}
+
+
+
+
+
+
+}

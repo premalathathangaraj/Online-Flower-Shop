@@ -41,10 +41,11 @@ public class UpdateProductServlet extends HttpServlet {
 		
 		
 		ProductDAOImpl productDao=new ProductDAOImpl();
-		String flower_name=request.getParameter("flowerName");
-		int flower_id=Integer.parseInt("flowerId");
+		String new_flower_name=request.getParameter("newflowerName");
+		String old_flower_name=request.getParameter("oldflowerName");
+		int id=productDao.findProductId1(old_flower_name);
 		
-		productDao.updateProduct(flower_name,flower_id);
+		productDao.updateProduct(new_flower_name,id);
 		
 		response.sendRedirect("Admin.jsp");
 		
@@ -52,7 +53,7 @@ public class UpdateProductServlet extends HttpServlet {
 		
 		
 		
-		doGet(request, response);
+//		doGet(request, response);
 	}
 
 }

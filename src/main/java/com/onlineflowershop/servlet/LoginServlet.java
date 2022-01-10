@@ -12,6 +12,7 @@ import javax.servlet.http.HttpSession;
 
 import com.onlineflowershop.dao.impl.AdminDAOImpl;
 import com.onlineflowershop.dao.impl.UserDAOImpl;
+import com.onlineflowershop.dao.impl.WalletDAOImpl;
 import com.onlineflowershop.model.User;
 
 @WebServlet("/Login")
@@ -26,16 +27,18 @@ public class LoginServlet extends HttpServlet {
 
 		UserDAOImpl userDao = new UserDAOImpl();
 		User currentUser=userDao.validateUser(emailId, password);
-//		System.out.println(currentUser.getRole());
-//		System.out.println(currentUser);
+
 		String role=currentUser.getRole();
 		HttpSession session=request.getSession();
 		session.setAttribute("currentUser", currentUser);
 		String user=currentUser.getName();
+		
 		session.setAttribute("username", user);
 		int userId=currentUser.getUserId();
+		
 		session.setAttribute("userId", userId);
 		System.out.println(userId);
+	
 
 
 		if (role.equals("Admin")) {
@@ -45,8 +48,25 @@ public class LoginServlet extends HttpServlet {
 
 		else if (role.equals("user")) {
 			
-			response.sendRedirect("ShowProduct.jsp");
+			session.setAttribute("currentUser1",currentUser.getName());
+			
+			session.setAttribute("currentUser1", currentUser.getName());
+			
+			WalletDAOImpl WalletBal=new WalletDAOImpl();
+			int WalletBallance=WalletBal.walletbal(userId);
+			
+		if(WalletBallance>1000) {
+			
+			RequestDispatcher requestDispatcher = request.getRequestDispatcher("ShowProduct.jsp");
+			requestDispatcher.forward(request, response);
+			
+		}	else {
+			
+			response.sendRedirect("CheckWallet.jsp");
+			
 		}
+			
+			}
 
 	}
 

@@ -40,10 +40,12 @@ public class RatingDAOImpl implements RatingDAO {
 		int rating=0;
 		try {
 			stmt = con.createStatement();
+			System.out.println(flowerName);
 			ResultSet rs=stmt.executeQuery(findRating);
 			if(rs.next())
 			{
 			rating=rs.getInt(1);
+			System.out.println(rating);
 			}
 			
 		} catch (SQLException e) {

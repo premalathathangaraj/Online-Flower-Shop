@@ -13,6 +13,6 @@ public interface CartDAO {
 	public  int findCartId(int cart);
 	public int walletbal (int id);  
 	public int updatewallet(int amount,int userid); 
-
+	public ResultSet showUserCart(int userId);
 
 }

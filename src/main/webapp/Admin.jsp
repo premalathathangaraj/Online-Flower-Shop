@@ -3,6 +3,21 @@
 <!DOCTYPE html>
 <html>
 <head>
+
+<style>
+
+body{
+background-image:url(home.jpg);
+background-repeat:no-repeat;
+background-size:cover;
+}
+
+
+</style>
+
+
+
+
 <meta charset="ISO-8859-1">
 <title>Admin page</title>
 </head>

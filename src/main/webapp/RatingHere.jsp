@@ -3,6 +3,13 @@
 <!DOCTYPE html>
 <html>
 <head>
+<style>
+body{
+background-image:url('index1.jpg');
+background-repeat:no-repeat;
+background-size:cover;
+}
+</style>
 <meta charset="ISO-8859-1">
 <title>Rating here</title>
 </head>
@@ -14,6 +21,5 @@
 <button type="submit" id="rating">Rating</button>
 </form >
 </center>
-
 </body>
 </html>

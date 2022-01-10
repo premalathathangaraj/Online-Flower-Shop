@@ -3,6 +3,15 @@
 <!DOCTYPE html>
 <html>
 <head>
+<style>
+body{
+background-image:url('home.jpg');
+background-repeat:no-repeat;
+background-size:cover;
+}
+
+</style>
+
 <meta charset="ISO-8859-1">
 <title>Order Success</title>
 </head>
@@ -32,6 +41,8 @@ ResultSet rs=product.ShowRating();
 
 </table>
 
-</form>
+
+</form><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<a href="Home.jsp">Back To Home Page</a>
 </body>
 </html>

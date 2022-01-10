@@ -6,10 +6,18 @@
 <head>
 <style type="text/css">
 table,th,td{
- border: 1px solid black;
+ border: 1px solid white;
   border-collapse: collapse;
   padding: 20px;
 }
+
+body{
+background-image:url(home1.jpeg.jpg);
+background-repeat:no-repeat;
+background-size:cover;
+}
+
+
 </style>
 <meta charset="ISO-8859-1">
 <title>ShowUser page</title>
@@ -25,12 +33,12 @@ ResultSet rs=cartDao.ShowCart();
 <table>
 
 <tr>
-<th>Cart Id</th>
-<th>Flower Id</th>
-<th>User Id</th>
-<th>Order Quantity</th>
-<th>Total Price</th>
-<th>Order Date</th>
+<th style=color:white>Cart Id</th>
+<th style=color:white>Flower Id</th>
+<th style=color:white>User Id</th>
+<th style=color:white>Order Quantity</th>
+<th style=color:white>Total Price</th>
+<th style=color:white>Order Date</th>
 
 
 </tr>
@@ -38,12 +46,12 @@ ResultSet rs=cartDao.ShowCart();
 <% while(rs.next()) {%>
 
 <tr>
-<td><%= rs.getInt(1) %></td>
-<td><%= rs.getInt(2) %></td>
-<td><%= rs.getInt(3) %></td>
-<td><%= rs.getInt(4) %></td>
-<td><%= rs.getDouble(5) %></td>
-<td><%= rs.getDate(6) %>
+<td style=color:white><%= rs.getInt(1) %></td>
+<td style=color:white><%= rs.getInt(2) %></td>
+<td style=color:white><%= rs.getInt(3) %></td>
+<td style=color:white ><%= rs.getInt(4) %></td>
+<td style=color:white><%= rs.getDouble(5) %></td>
+<td style=color:white><%= rs.getDate(6) %>
 
 </tr>
 
