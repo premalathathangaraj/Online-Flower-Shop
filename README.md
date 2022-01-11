@@ -1,4 +1,4 @@
-#Onile Flower Shop Project
+#Online Flower Shop Project
 
 #### Objective
 To order the flower through Online
@@ -12,13 +12,13 @@ To order the flower through Online
 
 ##Admin
 
-Admin Name: Premalatha
+1. Admin Name: Premalatha
 
-Admin Password:jeev0702
+2. Admin Password: jeev0702
 
-1. Admin Can Add New Products
-2. Admin Can Update and Delete Products
-3. Admin Can Show All Users and Order details
+3. Admin Can Add New Products
+4. Admin Can Update and Delete Products
+5. Admin Can Show All Users and Order details
 
 # User
 
