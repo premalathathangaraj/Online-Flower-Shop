@@ -27,6 +27,6 @@ To order the flower through Online
 3. User Can Filter Category wise Flower List
 4. User Can Add Flower Rating
 5. User Can Order Flower thorugh online Payment like Wallet Method
-6. User Can Recharge Wallet
+
 
 
