@@ -43,6 +43,7 @@ ResultSet rs=productDao.showCategoryList(categoryname);
 <th style=color:black>Flower Retail price</th>
 <th style=color:black>Flower Category</th>
 <th style=color:black>Flower Rating</th>
+<th style=color:black>Buy Product</th>
 </tr>
 <%while(rs.next()){%>
 <tr>

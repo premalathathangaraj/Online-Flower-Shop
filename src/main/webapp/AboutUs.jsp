@@ -18,36 +18,32 @@ margin-bottom: 350px;
 }
 
 .topnav {
-  background-color: Gray;
+  background-color: gray;
   overflow: hidden;
 }
 
 .topnav a {
   float: left;
-  color: #f2f2f2;
+  color: pink;
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
   font-size: 17px;
 }
 
-
 .topnav a:hover {
-  background-color: #ddd;
-  color: black;
-}
-
-
-.topnav a.active {
-  background-color: gray;
-  color: white;
-}
+  background-color:pink;
+  color:black ;
+  }
+  
 </style>
 </head>
 <body>
 <div class="topnav" >
- <a class="active" href="Login.jsp">Login</a>
-  <a href="Register.jsp">Register</a>   
+
+
+   <a href="Category.jsp">Category </a>
+    
    <a href="Home.jsp">Back To Home</a>
 </div>
 

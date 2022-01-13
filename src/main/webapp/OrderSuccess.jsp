@@ -7,19 +7,23 @@
 <style>
 
 .topnav {
-  background-color: #FC9483;
+  background-color: gray;
   overflow: hidden;
 }
+
 .topnav a {
   float: left;
-  color: #f2f2f2;
+  color: pink;
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
   font-size: 17px;
 }
 
-
+.topnav a:hover {
+  background-color:pink;
+  color:black ;
+  }
 body{
 background-image:url('home.jpg');
 background-repeat:no-repeat;
@@ -36,7 +40,7 @@ margin-top:200px;
 </head>
 <body>
 <div class="topnav">
-<a href="Home.jsp">LogOut</a>
+<a href="Home.jsp">Log Out</a>
 </div>
 
 <center><h1>Your Order is Placed Successfully!! Thank You!!</h1>

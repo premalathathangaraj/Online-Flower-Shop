@@ -58,8 +58,10 @@ ResultSet rs=product.showProduct();
  
 
 </form>
+
  </center>
 </fieldset>
+<a href="Home.jsp">Back To Home Page</a>
 
 </body>
 </html>

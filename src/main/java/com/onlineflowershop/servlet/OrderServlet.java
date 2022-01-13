@@ -1,6 +1,7 @@
 package com.onlineflowershop.servlet;
 
 import java.io.IOException;
+import java.sql.ResultSet;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -28,21 +29,13 @@ public class OrderServlet extends HttpServlet {
 		// TODO Auto-generated method stub
 		 HttpSession session=request.getSession();
 		 int quantity=Integer.parseInt(request.getParameter("quantity"));
-		 
+		 System.out.println("helo");
 		 String name=(String) session.getAttribute("User");
 		 UserDAOImpl userDao=new UserDAOImpl();
+		 	
+		 double retailPrice=Double.parseDouble(session.getAttribute("retailPrice").toString());				
 		 
-
-		 		
-		 
-		
-		 double retailPrice=Double.parseDouble(session.getAttribute("retailPrice").toString());	
-			
-		 
-		 		 double totalPrice=(retailPrice*quantity);
-		 		 
-		 		
-		 		 
+		 		 double totalPrice=(retailPrice*quantity);		 		 
 		 
 		 	WalletDAOImpl walletDao=new WalletDAOImpl();
 		 	int userId=Integer.parseInt(session.getAttribute("userId").toString());
@@ -55,16 +48,17 @@ public class OrderServlet extends HttpServlet {
 		 	
 		 	 session.setAttribute("totalPrice", totalPrice);
 		 	
-		 	
+		 	 Date order=(Date) session.getAttribute("orderDate");
+
 		 	walletDao.updatewallet(wallbal,userId);
 		 	
 		 	int flowerId=Integer.parseInt(session.getAttribute("flower_id").toString());
 		 	session.setAttribute("flower_id", flowerId);
 		 	
 		 	Cart cart=new Cart(flowerId,userId,quantity,totalPrice);
-		 	CartDAOImpl cartDao=new CartDAOImpl();
-		 	cartDao.insertCart(cart);
 		 	
+		 	CartDAOImpl cartDao=new CartDAOImpl();
+            cartDao.insertCart(cart);
 		 response.sendRedirect("OrderSuccess.jsp");	
 		 
 		 

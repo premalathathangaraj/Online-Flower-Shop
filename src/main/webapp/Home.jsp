@@ -21,7 +21,7 @@ color: black;
 
 .topnav a {
   float: left;
-  color: #f2f2f2;
+  color: pink;
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
@@ -29,12 +29,12 @@ color: black;
 }
 
 .topnav a:hover {
-  background-color: #ddd;
-  color: black;
+  background-color:pink;
+  color:black ;
   }
   
 .topnav a.active {
-  background-color:gray;
+  
   color:white;
 }
 </style>
@@ -44,8 +44,10 @@ color: black;
 <div class="topnav" >
   <a class="active" href="Login.jsp">Login</a>
   <a href="Register.jsp">Register</a>
-  <a href="AboutUs.jsp">AboutUs</a>
+  <a href="AboutUs.jsp">About Us</a>
   <a href="Category.jsp">Category</a>
+  <a href="MyCart.jsp">My Order</a>
+  
   
    
   

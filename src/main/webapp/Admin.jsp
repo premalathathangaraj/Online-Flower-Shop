@@ -12,6 +12,33 @@ background-repeat:no-repeat;
 background-size:cover;
 }
 
+.topnav {
+  background-color: gray;
+  overflow: hidden;
+}
+
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+  }
+  
+.topnav a.active {
+  background-color:gray;
+  color:white;
+}
+
+
+  
+
 
 </style>
 
@@ -24,13 +51,25 @@ background-size:cover;
 <body>
 <h3> Welcome Admin</h3>
 
+<form>
+<div class="topnav" >
+  
+  <a href="Home.jsp">Home</a>
+  
+  
+  
+   
+</div>
+</form>
+
+
 <fieldset id="box">
 <form action="ShowUser.jsp">
 <button type="submit"id="button"><i>ShowUser</i> </button>
 </form><br>
 
-<form action="ShowCart.jsp">
-<button type="submit"id="button"><i>ShowCart</i> </button>
+<form action="SalesHistory.jsp">
+<button type="submit"id="button"><i>SalesHistory</i> </button>
 </form><br>
 
 

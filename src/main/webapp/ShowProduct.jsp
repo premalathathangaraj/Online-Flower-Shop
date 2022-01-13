@@ -17,21 +17,81 @@ background-repeat:no-repeat;
 background-size:cover;
 }
 
+.topnav {
+  background-color: gray;
+  overflow: hidden;
+}
+
+.topnav a {
+  float: left;
+  color: pink;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color:pink;
+  color:black ;
+  }
+  
+
+
+#button {
+	border-radius: 20px;
+	padding: 10px 20px;
+	background:blue;
+	color: black;
+	margin-top: 20px;
+	border: none;
+	outline: none;
+	margin-left: 50px;
+}
+
+
+
+#button:hover {
+	background-color:pink;
+	color: black;
+	cursor: pointer;
+
 
 </style>
 <meta charset="ISO-8859-1">
 <title>Show Product Page</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+
+
+
+
 </head>
 <body>
 <form>
-<p> Welcome </p>
+
+
+
+
+
+
+<div class="topnav" >
+  
+  <a href="AboutUs.jsp">AboutUs</a>
+  <a href="Category.jsp">Category</a>
+  <a href="MyCart.jsp">My Order</a>
+  
+   
+  
+
 <%
 //int id=Integer.parseInt(request.getParameter("userId"));
 ProductDAOImpl product=new ProductDAOImpl();
 ResultSet rs=product.showProduct();
 %>
 
-<table>
+<table align="center" class="table table-hover">
 <tr>
 <th>Picture</th>
 <th style=color:black>Flower Name</th>
@@ -40,6 +100,7 @@ ResultSet rs=product.showProduct();
 <th style=color:black>Flower Retail price</th>
 <th style=color:black>Flower Category</th>
 <th style=color:black>Flower Rating</th>
+<th style=color:black>Buy Product</th>
 </tr>
 <%while(rs.next()){%>
 <tr>
@@ -50,7 +111,7 @@ ResultSet rs=product.showProduct();
 <td style=color:black><%= rs.getDouble(5) %></td>
 <td style=color:black><%= rs.getString(6) %></td>
 <td style=color:black><%= rs.getInt(7) %></td>
-<td><button><a href="Order.jsp?flowerId=<%=rs.getInt(1)%>&flowerName=<%=rs.getString(2)%>">buy</a></button></td>
+<td><button><a href="Order.jsp?flowerId=<%=rs.getInt(1)%>&flowerName=<%=rs.getString(2)%>" style=color:black>buy</a></button></td>
 </tr>
 
 <%} %>
@@ -58,7 +119,7 @@ ResultSet rs=product.showProduct();
 
 </table>
 
-
+</div>
 </form>
 </body>
 </html>

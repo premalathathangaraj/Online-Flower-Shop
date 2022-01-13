@@ -12,7 +12,7 @@ margin-left:600px;
 margin-top:250px;
 }
 body{
-background-image:url(home.jsp);
+background-image:url(home.jpg);
 background-repeat:no-repeat;
 background-size:cover;
 }

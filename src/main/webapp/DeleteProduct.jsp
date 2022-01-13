@@ -57,7 +57,10 @@ FlowerId:<input type="number" name="FlowerId"><br><br>
 <button type="submit" id="button"> delete</button>
 
 </form>
+
+
 </fieldset>
+<a href="Home.jsp">Back To Home Page</a>
 
 </body>
 </html>

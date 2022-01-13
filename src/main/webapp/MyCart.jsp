@@ -61,8 +61,8 @@ ResultSet rs=cartDao.showUserCart(userId);
 <table align="center">
 <tr>
 
-<th>Flower Name</th>
 <th>User Name</th>
+<th>Flower Name</th>
 <th>Order quantity</th>
 <th>Total price</th>
 

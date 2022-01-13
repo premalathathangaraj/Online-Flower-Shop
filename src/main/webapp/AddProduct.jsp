@@ -34,6 +34,7 @@ Category_Name:     <input type="text" name="categoryName"><br><br>
 <button type="submit" name="buttton"> Add</button> 
 
 </form>
+<a href="Home.jsp">Back To Home Page</a>
 
 </center></fieldset>
 

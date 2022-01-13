@@ -81,8 +81,8 @@ a {
 
 
 
-<form action="Login" method="post">
-<input type="emailId"    name="emailId" placeholder="Email_id" pattern="[A-Za-z0-9]+[@][a-zA-Z]+[.][a-z]+" Required><br><br>
+
+<input type="emailId"    name="emailId" placeholder="Email_id" pattern="[A-Za-z0-9]+[@][a-zA-Z]+[.][a-z]+" autofocus Required><br><br>
 <input type="password" name="password" placeholder="Password" pattern="[a-z0-9]{8}"   Required><br><br>
 
 <button type="submit" id="button">Login</button><br><br>

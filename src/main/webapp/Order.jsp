@@ -10,6 +10,26 @@ background-repeat:no-repeat;
 background-size:cover;
 }
 
+.topnav {
+  background-color: gray;
+  overflow: hidden;
+}
+
+.topnav a {
+  float: left;
+  color: pink;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color:pink;
+  color:black ;
+  }
+
+
 </style>
 
 
@@ -17,6 +37,15 @@ background-size:cover;
 <title>Order page</title>
 </head>
 <body>
+<div class="topnav" >
+
+   <a href="AboutUs".jsp">About Us</a>
+   <a href="Category.jsp">Category </a>
+    
+   <a href="Home.jsp">Back To Home</a>
+</div>
+
+
 <%int flowerId=Integer.parseInt(request.getParameter("flowerId")); 
 	
 	session.setAttribute("flower_id",flowerId);
@@ -32,8 +61,6 @@ ResultSet rs=productDao.findPrice(flowerId);
 
 String name=session.getAttribute("username").toString();
 //System.out.println(name);
-
-
 
 %>
 <center>
@@ -63,3 +90,5 @@ Quantity:<input type="number" name="quantity"><br>
 
 </body>
 </html>
+
+

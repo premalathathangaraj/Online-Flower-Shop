@@ -2,6 +2,7 @@ package com.onlineflowershop.dao.impl;
 
 
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -42,24 +43,25 @@ public class CartDAOImpl implements CartDAO {
 
 	//view cart items
 
-		public  ResultSet ShowCart() {	
+		public  ResultSet ShowCart(int userId) {	
 			
 			
-			String query = "select * from cart_items";
+			String query ="select  flower_id,count(order_quantity),sum(total_price),user_id,trunc(order_date) from cart_items group by flower_id,user_id ,trunc(order_date)order by trunc(order_date) desc";
 			Connection con = ConnectionUtil.getDbConnection();	
 				
-			ResultSet rs=null;
+			
 			
 			try {
-				Statement stmt = con.createStatement();
-				 rs = stmt.executeQuery(query);
+					Statement stmt = con.createStatement();
+				System.out.println(userId);
+				ResultSet rs = stmt.executeQuery(query);
 				
-				
-				
+			
+				return rs;
 			} catch (Exception e) {
 				System.out.println(e.getMessage());
 			}
-			return rs;
+			return null;
 		}
 
 		// update cart
@@ -195,7 +197,7 @@ public class CartDAOImpl implements CartDAO {
 			}
 			
 			public ResultSet showUserCart(int userId) {
-				String query = "select email_id,flower_name,order_quantity,total_price,order_date from cart_items inner join user_details using (user_id)inner join inventory using(flower_id) where user_id=?"; 
+				String query = "select email_id,flower_name,order_quantity,total_price,order_date from cart_items inner join user_details using (user_id)inner join inventory using(flower_id) where user_id=?" ; 
 						
 				
 				Connection con=ConnectionUtil.getDbConnection();
@@ -217,8 +219,6 @@ public class CartDAOImpl implements CartDAO {
 				return rs;
 				
 			}
-
-
 
 
 
